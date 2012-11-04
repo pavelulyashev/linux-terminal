@@ -1,12 +1,14 @@
-$CONFIG_DIR="$HOME/.linux-terminal/"
+$CONFIG_DIR=`echo $HOME/.linux-terminal/`
 
-$VIM_DIR="$HOME/.vim/"
-$VIMRC="$HOME/.vimrc"
+$VIM_DIR=`echo $HOME/.vim/`
+$VIMRC=`echo $HOME/.vimrc`
 
-$ROOT="/root"
+$ROOT=`echo /root`
 
 # install git + clone .gitconfig
 apt-get install git-core vim screen mc moc grc python-setuptools python-pip 
+
+easy_install Pygments
         
 git clone git://github.com/pavelulyashev/linux-terminal.git $CONFIG_DIR
 
@@ -32,7 +34,7 @@ cp $CONFIG_DIR/.gitconfig $HOME
 ln -s $HOME/.gitconfig $ROOT/.gitconfig
 
 # aliases
-cp $CONFIG_DIR/bash/* $HOME
+cp $CONFIG_DIR/bash/.bash* $HOME
 for file in $(ls -a $HOME | grep .bash); do ln -s $HOME/$file $ROOT/$file; done
 
 # install mysql + copy grc config

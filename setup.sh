@@ -1,14 +1,14 @@
-$CONFIG_DIR=$HOME/.linux-configs/
+$CONFIG_DIR="$HOME/.linux-terminal/"
 
-$VIM_DIR=$HOME/.vim/
-$VIMRC=$HOME/.vimrc
+$VIM_DIR="$HOME/.vim/"
+$VIMRC="$HOME/.vimrc"
 
-$ROOT=/root
+$ROOT="/root"
 
 # install git + clone .gitconfig
 apt-get install git-core vim screen mc moc grc python-setuptools python-pip 
         
-git clone git://github.com/pavelulyashev/linux-configs.git $CONFIG_DIR
+git clone git://github.com/pavelulyashev/linux-terminal.git $CONFIG_DIR
 
 # vim
 rm -r $VIM_DIR

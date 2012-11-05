@@ -2,7 +2,8 @@ alias agi='sudo apt-get install'
 alias agp='sudo apt-get purge'
 alias acs='apt-cache search'
 
-alias ls="ls -alFh --color=always"
+alias ls="ls --color=auto"
+alias ll="ls -alFh --color=auto"
 alias ping="grc ping"
 alias traceroute="grc traceroute"
 alias make="grc make"

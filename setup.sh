@@ -22,12 +22,14 @@ echo "source $HOME/.vim/local.vim" > $VIMRC
 
 # mc
 echo -e "\e[1;32m-----------> Configuring mc ...\e[0m"
+mkdir $HOME/.mc
 cp $CONFIG_DIR/mc_ini $HOME/.mc/ini
 sudo mkdir $ROOT/.mc
 sudo ln -sf $HOME/.mc/ini $ROOT/.mc/ini
 
 # moc
 echo -e "\e[1;32m-------------> Configuring moc ...\e[0m"
+mkdir $HOME/.moc
 cp $CONFIG_DIR/moc_config $HOME/.moc/config
 
 # screen

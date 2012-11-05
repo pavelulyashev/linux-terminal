@@ -10,13 +10,29 @@ else
     export TERM='xterm-color'
 fi
 
+[[ -f /etc/bash_completion ]] && . /etc/bash_completion
 
-[[ -f /etc/bash_completion.d/git ]] && . /etc/bash_completion.d/git
+# Check if ssh connection is active
+function is_ssh {
+    if [[ -n $SSH_CLIENT ]]; then echo 1; else echo 0; fi
+}
+
+function ssh_greetings {
+    echo " ssh `echo $SSH_CLIENT | tr " " "\n" | head -1`"
+}
 
 if [[ $EUID -eq 0 ]]; then
-    export PS1="\[$BBlue\][\t] \[$BRed\]\u@\h \[$BBlue\]\w\[$Blue\]$(__git_ps1) \[$BRed\]# \[$BPurple\]"
-else
-    export PS1="\[$Cyan\][\t] \[$Yellow\]\u@\h \[$BBlue\]\w\[$BWhite\]$(__git_ps1) \[$BGreen\]\$ \[$BYellow\]"
+    if [ $(is_ssh) -eq 1 ]; then
+        export PS1="\[$BGreen\][\t]\[$BWhite\]$(ssh_greetings) \[$BRed\]\u@\h \[$BGreen\]\w\[$Blue\]$(__git_ps1) \[$BRed\]# \[$BPurple\]"
+    else
+        export PS1="\[$BBlue\][\t] \[$BRed\]\u@\h \[$BBlue\]\w\[$Blue\]$(__git_ps1) \[$BRed\]# \[$BPurple\]"
+    fi
+else 
+    if [ $(is_ssh) -eq 1 ]; then
+        export PS1="\[$Green\][\t]\[$BPurple\]$(ssh_greetings) \[$Blue\]\u@\h \[$BGreen\]\w\[$BWhite\]$(__git_ps1) \[$BYellow\]\$ \[$Green\]"
+    else
+        export PS1="\[$Cyan\][\t] \[$Yellow\]\u@\h \[$BBlue\]\w\[$BWhite\]$(__git_ps1) \[$BGreen\]\$ \[$Yellow\]"
+    fi
 fi
 
 trap 'echo -ne "${Color_Off}"' DEBUG

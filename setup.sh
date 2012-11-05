@@ -31,6 +31,7 @@ sudo ln -sf $HOME/.mc/ini $ROOT/.mc/ini
 echo -e "\e[1;32m-------------> Configuring moc ...\e[0m"
 mkdir $HOME/.moc
 cp $CONFIG_DIR/moc_config $HOME/.moc/config
+chmod 644 $HOME/.moc/config
 
 # screen
 echo -e "\e[1;32m---------------> Configuring screen ...\e[0m"

@@ -5,7 +5,7 @@ ROOT=/root
 
 # install git + clone .gitconfig
 echo -e "\e[1;32m--> Installing packages ...\e[0m"
-sudo apt-get install git-core vim screen mc moc grc python-setuptools python-pip 
+sudo apt-get install git-core vim screen mc moc grc htop python-setuptools python-pip 
 
 echo -e "\e[1;32m-----> Installing pygments ...\e[0m"
 sudo easy_install Pygments

@@ -24,9 +24,11 @@ git clone git://github.com/pavelulyashev/linux-terminal.git $CONFIG_DIR
 
 # vim
 echo -e "\e[1;32m---------> Configuring vim ...\e[0m"
+sudo chown -R $USER $HOME/.vim/
 rm -rf $VIM_DIR
 git clone git://github.com/pavelulyashev/vim.git $VIM_DIR
 echo "source $HOME/.vim/local.vim" > $VIMRC
+sudo chown -R $USER $HOME/.vim/
 
 # mc
 echo -e "\e[1;32m-----------> Configuring mc ...\e[0m"

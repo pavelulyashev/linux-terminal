@@ -5,7 +5,15 @@ ROOT=/root
 
 # install git + clone .gitconfig
 echo -e "\e[1;32m--> Installing packages ...\e[0m"
-sudo apt-get install git-core vim screen mc moc grc htop python-setuptools python-pip 
+if [ -n /usr/bin/apt-get ]; then
+    sudo apt-get install git-core vim screen mc moc grc htop python-setuptools python-pip 
+elif [ -n /usr/bin/yum ]; then
+    sudo yum install -y git-core vim screen mc python-setuptools 
+    sudo yum install http://pkgs.repoforge.org/htop/htop-1.0.1-2.el6.rf.x86_64.rpm
+    sudo easy_install pip
+    sudo pip install grc
+fi
+
 
 echo -e "\e[1;32m-----> Installing pygments ...\e[0m"
 sudo easy_install Pygments

@@ -16,5 +16,3 @@ alias head="grc head"
 alias dj="grc python manage.py"
 
 alias pcat="pygmentize -f terminal -g"
-
-export GREP_OPTIONS="--color=auto"

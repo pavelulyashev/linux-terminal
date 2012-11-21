@@ -44,6 +44,7 @@ sudo easy_install Pygments
 echo_progress "Cloning general configs ..."
 rm -rf $CONFIG_DIR
 git clone git://github.com/pavelulyashev/linux-terminal.git $CONFIG_DIR
+cp $CONFIG_DIR/bash/.bash* $HOME
 
 # vim
 echo_progress "Configuring vim ..."
@@ -87,7 +88,6 @@ if [[ ! $is_mac ]]; then
     sudo ln -sf $HOME/.gitconfig $ROOT/.gitconfig
     sudo ln -sf $HOME/.screenrc $ROOT/.screenrc
 
-    cp $CONFIG_DIR/bash/.bash* $HOME
     for file in $(ls -a $CONFIG_DIR/bash | grep .bash); do sudo ln -sf $HOME/$file $ROOT/$file; done
 
     sudo mkdir $ROOT/.mc

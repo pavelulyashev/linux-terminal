@@ -19,6 +19,8 @@ alias netstat="grc netstat"
 alias tail="grc tail"
 alias head="grc head"
 
+alias less="less --RAW-CONTROL-CHARS"
+
 alias dj="grc python manage.py"
 
 alias pcat="pygmentize -f terminal -g"

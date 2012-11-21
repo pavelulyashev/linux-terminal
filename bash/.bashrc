@@ -29,13 +29,13 @@ if [[ $EUID -eq 0 ]]; then
     if [ $(is_ssh) -eq 1 ]; then
         export PS1="\[$BGreen\][\t]\[$BWhite\]$(ssh_greetings) \[$BRed\]\u@\h \[$BGreen\]\w\[$Blue\]$(__git_ps1) \[$BRed\]# \[$BPurple\]"
     else
-        export PS1="\[$BBlue\][\t] \[$BRed\]\u@\h \[$BBlue\]\w\[$Blue\]$(__git_ps1) \[$BRed\]# \[$BPurple\]"
+        export PS1="\[$BBlue\][\t] \[$BRed\]\u@\h \[$BBlue\]\w\[$Blue\]\$(__git_ps1) \[$BRed\]# \[$BPurple\]"
     fi
 else 
     if [ $(is_ssh) -eq 1 ]; then
         export PS1="\[$Green\][\t]\[$BPurple\]$(ssh_greetings) \[$Blue\]\u@\h \[$BGreen\]\w\[$BWhite\]$(__git_ps1) \[$BYellow\]\$ \[$Green\]"
     else
-        export PS1="\[$Cyan\][\t] \[$Green\]\u@\h \[$BBlue\]\w\[$BWhite\]$(__git_ps1) \[$BGreen\]\$ \[$Yellow\]"
+        export PS1="\[$Cyan\][\t] \[$Green\]\u@\h \[$BBlue\]\w\[$BWhite\]\$(__git_ps1) \[$BGreen\]\$ \[$Yellow\]"
     fi
 fi
 

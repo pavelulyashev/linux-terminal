@@ -5,7 +5,7 @@ VIM_DIR=$HOME/.vim/
 VIMRC=$HOME/.vimrc
 
 
-if [ $TERM_PROGRAM == "Apple_Terminal" ]; then
+if [[ $TERM_PROGRAM == "Apple_Terminal" ]]; then
     is_mac=1 
 else 
     is_mac=0 
@@ -58,10 +58,10 @@ git submodule init && git submodule update
 
 # mc
 echo_progress "Configuring mc ..."
-if [ -d $HOME/.mc ]; then
-    cp $CONFIG_DIR/mc_ini $HOME/.mc/ini
-elif [ -d $HOME/.config/mc ]; then
+if [ -d $HOME/.config/mc ]; then
     cp $CONFIG_DIR/mc_ini $HOME/.config/mc/ini
+elif [ -d $HOME/.mc ]; then
+    cp $CONFIG_DIR/mc_ini $HOME/.mc/ini
 fi
 
 # moc

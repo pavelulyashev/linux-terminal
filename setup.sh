@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 CONFIG_DIR=$HOME/.linux-terminal/
 VIM_DIR=$HOME/.vim/
 VIMRC=$HOME/.vimrc

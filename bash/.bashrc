@@ -11,7 +11,7 @@ else
 fi
 
 if [ $TERM_PROGRAM == "Apple_Terminal" ]; then
-    [[ -f `brew --prefix`/etc/bash_completion ]] && . `brew --prefix`/etc/bash_completion
+    [[ -f $(brew --prefix)/etc/bash_completion ]] && . $(brew --prefix)/etc/bash_completion
 else
     [[ -f /etc/bash_completion ]] && . /etc/bash_completion
 fi

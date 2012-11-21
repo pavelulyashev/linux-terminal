@@ -2,8 +2,14 @@ alias agi='sudo apt-get install'
 alias agp='sudo apt-get purge'
 alias acs='apt-cache search'
 
-alias ls="ls --color=auto"
-alias ll="ls -alFh --color=auto"
+if [[ $TERM_PROGRAM == "Apple_Terminal" ]]; then 
+    alias ls="ls -G"
+    alias ll="ls -alFhG"
+else
+    alias ls="ls --color=auto"
+    alias ll="ls -alFh --color=auto"
+fi
+
 alias ping="grc ping"
 alias traceroute="grc traceroute"
 alias make="grc make"

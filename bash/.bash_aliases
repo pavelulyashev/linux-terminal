@@ -10,17 +10,9 @@ else
     alias ll="ls -alFh --color=auto"
 fi
 
-alias ping="grc ping"
-alias traceroute="grc traceroute"
-alias make="grc make"
-alias diff="grc diff"
-alias cvs="grc cvs"
-alias netstat="grc netstat"
-alias tail="grc tail"
-alias head="grc head"
-
 alias less="less --RAW-CONTROL-CHARS"
 
-alias dj="grc python manage.py"
+alias dj="python manage.py"
 
 alias pcat="pygmentize -f terminal -g"
+alias reload_bash="source ~/.bashrc"
